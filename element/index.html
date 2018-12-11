@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>首页</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/media.css" />
+    <link rel="stylesheet" href="css/swiper.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <!-- 引入样式 -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"
+    />
+  </head>
+
+  <body>
+    <div id="app" class="wrap">
+      <el-container>
+
+         
+
+
+        <!-- 头部 -->
+        <el-header class="header">
+             <div class="content clearfix">
+                <i class="fa  fa-angle-left icon fr back-btn"></i>
+                首页
+                <i class="fa fa-bars icon fr nav-btn" @click="navopen"></i>
+             </div>
+              
+        </el-header>
+
+        <!-- 主内容 -->
+        <el-main class="main">
+
+            <transition name="slide-fade">
+            <div class="nav" v-if="navtemp">
+               
+                <el-row class="tac">
+                    <el-col :span="24">
+                        <el-menu
+                          default-active="2"
+                          class="el-menu-vertical-demo"
+                          @open="handleOpen"
+                          @close="handleClose"
+                          background-color="#545c64"
+                          text-color="#fff"
+                          active-text-color="#ffd04b">
+                          <el-submenu index="1">
+                            <template slot="title">
+                              <i class="el-icon-location"></i>
+                              <span>导航一</span>
+                            </template>
+                            <el-menu-item-group>
+                              <template slot="title">分组一</template>
+                              <el-menu-item index="1-1">选项1</el-menu-item>
+                              <el-menu-item index="1-2">选项2</el-menu-item>
+                            </el-menu-item-group>
+                            <el-menu-item-group title="分组2">
+                              <el-menu-item index="1-3">选项3</el-menu-item>
+                            </el-menu-item-group>
+                            <el-submenu index="1-4">
+                              <template slot="title">选项4</template>
+                              <el-menu-item index="1-4-1">选项1</el-menu-item>
+                            </el-submenu>
+                          </el-submenu>
+                          <el-menu-item index="2">
+                            <i class="el-icon-menu"></i>
+                            <span slot="title">导航二</span>
+                          </el-menu-item>
+                          <el-menu-item index="3" disabled>
+                            <i class="el-icon-document"></i>
+                            <span slot="title">导航三</span>
+                          </el-menu-item>
+                          <el-menu-item index="4">
+                            <i class="el-icon-setting"></i>
+                            <span slot="title">导航四</span>
+                          </el-menu-item>
+                        </el-menu>
+                      </el-col>
+  
+                </el-row>
+             
+            </div>
+          </transition>
+
+
+
+          <!-- 轮播 -->
+          <div class="banner-1 swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="images/banner7.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="images/banner8.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="images/banner10.jpg" alt="" />
+              </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next" style="display:none"></div>
+            <div class="swiper-button-prev" style="display:none"></div>
+          </div>
+
+
+          <section class="search">
+              <div class="content clearfix">
+                  <input type="text" autocomplete="off" placeholder="请输入内容" class="el-input__inner">
+                 
+                    <button type="button" class="el-button el-button--default">
+                    <!----><i class="el-icon-search"></i><!---->
+                    </button>
+              </div>
+          </section>
+
+
+          <!-- 品牌 -->
+
+          <!-- 页面 -->
+          <section class="menu">
+                <table>
+                     <tbody>
+                          <tr>
+
+                       
+                             <td>
+                                <el-col :span="24">
+                                    <div style="color:#ff6665;">
+                                      <i class="fa fa-tablet fa-3x icon"></i>
+                                        <p>菜单1</p>
+                                    </div>
+                                  </el-col>
+                             </td>
+                             <td>
+                                <el-col :span="24">
+                                    <div style="color:#c4a45a;">
+                                      <i class=" fa fa-skyatlas fa-3x icon"></i>
+                                        <p>菜单1</p>
+                                    </div>
+                                  </el-col>
+                             </td>
+                             <td>
+                                <el-col :span="24">
+                                    <div style="color:#3baa9c;">
+                                      <i class="fa fa-plane fa-3x icon"></i>
+                                        <p>菜单1</p>
+                                    </div>
+                                  </el-col>
+                             </td>
+                          </tr>
+
+                          <tr>
+
+                          
+                             <td>
+                                <el-col :span="24">
+                                    <div style="color:#ff6faa;">
+                                      <i class="fa fa-desktop fa-3x icon"> </i>
+                                        <p>菜单1</p>
+                                    </div>
+                                  </el-col>
+                             </td>
+                             <td>
+                                <el-col :span="24">
+                                    <div style="color:#8dcbff;">
+                                      <i class="fa fa-comments fa-3x icon"></i>
+                                        <p>菜单1</p>
+                                    </div>
+                                  </el-col>
+                             </td>
+                             <td>
+                                <el-col :span="24">
+                                    <div style="color:#05a5cb">
+                                      <i class="fa fa-user-o fa-3x icon"> </i>
+                                        <p>菜单1</p>
+                                    </div>
+                                  </el-col>
+                             </td>
+                            </tr>
+
+
+                          <tr>
+                             <td>
+                                <el-col :span="24">
+                                    <div style="color:#6675ff;">
+                                      <i class="fa fa-cc-visa fa-3x icon"> </i>
+                                        <p>菜单1</p>
+                                    </div>
+                                  </el-col>
+                             </td>
+                             <td>
+                                <el-col :span="24">
+                                    <div style="color:#c584fd;">
+                                      <i class="fa fa-edge fa-3x icon"></i>
+                                        <p>菜单1</p>
+                                    </div>
+                                  </el-col>
+                             </td>
+                             <td>
+                                <el-col :span="24">
+                                    <div style="color:#fd505c;">
+                                      <i class="fa fa-user fa-3x icon"></i>
+                                        <p>菜单1</p>
+                                    </div>
+                                  </el-col>
+                             </td>
+                            </tr>
+                        
+                     </tbody>
+                </table>
+
+           
+          </section>
+
+
+           <!-- 展示 -->
+           <section class="show">
+              <div class="content clearfix">
+                  <h2 class="int">图片展示</h2>
+                  <ul>
+                      <li>
+                         <el-col :span="24">
+                             <div>
+                                 <img src="images/thumb_1.jpg" alt="">
+                                 <p>
+                                      热销1
+                                 </p>
+                             </div>
+                           </el-col>
+                      </li>
+                      <li>
+                         <el-col :span="24">
+                             <div>
+                                <img src="images/thumb_2.jpg" alt="">
+                                 <p>
+                                    热销1
+                               </p>
+                             </div>
+                           </el-col>
+                       </li>
+                       <li>
+                           <el-col :span="24">
+                               <div>
+                                  <img src="images/thumb_3.jpg" alt="">
+                                   <p>
+                                      热销1
+                                 </p>
+                               </div>
+                             </el-col>
+                         </li>
+                         <li>
+                            <el-col :span="24">
+                                <div>
+                                    <img src="images/thumb_4.jpg" alt="">
+                                    <p>
+                                       热销1
+                                  </p>
+                                </div>
+                              </el-col>
+                          </li>
+                    </ul>
+              </div>
+          </section>  
+
+
+          <!-- 列表 -->
+          <section class="list">
+              <div class="content clearfix">
+                  <h2 class="int">热销产品</h2>
+                  <ul>
+                      <li>
+                         <el-col :span="24">
+                             <div>
+                                 <img src="images/p1.jpg" alt="">
+                                 <p>
+                                      热销1
+                                 </p>
+                             </div>
+                           </el-col>
+                      </li>
+                      <li>
+                         <el-col :span="24">
+                             <div>
+                                 <img src="images/p1.jpg" alt="">
+                                 <p>
+                                    热销1
+                               </p>
+                             </div>
+                           </el-col>
+                       </li>
+                       <li>
+                           <el-col :span="24">
+                               <div>
+                                   <img src="images/p1.jpg" alt="">
+                                   <p>
+                                      热销1
+                                 </p>
+                               </div>
+                             </el-col>
+                         </li>
+                         <li>
+                            <el-col :span="24">
+                                <div>
+                                    <img src="images/p1.jpg" alt="">
+                                    <p>
+                                        热销1
+                                   </p>
+                                </div>
+                              </el-col>
+                         </li>
+                         <li>
+                            <el-col :span="24">
+                                <div>
+                                    <img src="images/p1.jpg" alt="">
+                                    <p>
+                                        热销1
+                                   </p>
+                                </div>
+                              </el-col>
+                          </li>
+                          <li>
+                              <el-col :span="24">
+                                  <div>
+                                      <img src="images/p1.jpg" alt="">
+                                      <p>
+                                          热销1
+                                     </p>
+                                  </div>
+                                </el-col>
+                            </li>
+                    </ul>
+              </div>
+          </section>  
+
+          <!-- 种类 -->
+
+          <section class="category">
+              <div class="content clearfix">
+                  <h2 class="int">产品种类</h2>
+                  <ul>
+                      <li>
+                        
+                             <img src="images/1.jpg" alt="">
+                       
+                      </li>
+                       <li>
+                           
+                             <img src="images/2.jpg" alt="">
+                       
+                     </li>
+                     <li>
+                      
+                          <!--  <dl>
+                             <dt>LCD</dt>
+                             <dd>Apple,Samsung,Huawei,Xiaomi,Lenovo,Sony</dd>
+                           </dl> -->
+                           <img src="images/3.jpg" alt="">
+                      
+                   </li>
+                     
+                       
+                    </ul>
+              </div>
+          </section>  
+
+
+        </el-main>
+
+        <!-- 脚部 -->
+            <el-footer> 
+                 <ul>
+                     <li class="active">
+                        <div>
+                          <i class="fa fa-home fa-3x icon"></i>
+                        </div>
+                        <div>首页</div>
+                     </li>
+                    <li>
+                        <div>
+                          <i class="fa fa-tablet fa-3x icon"></i>
+                        </div>
+                        <div>产品</div>
+                    </li>
+                     <li>
+                      <div>
+                        <i class="fa fa-newspaper-o fa-3x icon"></i>
+                      </div>
+                      <div>新闻</div>
+                   </li>
+                   <li>
+                    <div>
+                      <i class="fa fa-user fa-3x icon"></i>
+                    </div>
+                    <div>我的</div>
+                 </li>
+                 </ul>
+            </el-footer>
+      </el-container>
+    </div>
+
+    <!-- 引入组件库 -->
+
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <!-- import JavaScript -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: function() {
+          return { 
+            visible: false,
+            navtemp:false 
+          };
+        },
+        methods: {
+          handleOpen(key, keyPath) {
+        console.log(key, keyPath);
+         },
+         handleClose(key, keyPath) {
+        console.log(key, keyPath);
+      },
+          navopen(){
+            this.navtemp= !this.navtemp;
+          }
+        }
+        
+      });
+    </script>
+    <script src="js/swiper.js"></script>
+    <script>
+      var swiper = new Swiper(".swiper-container", {
+        spaceBetween: 0,
+        centeredSlides: true,
+        loop: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true
+        }
+      });
+    </script>
+
+    <style>
+      .el-row {
+        margin-bottom: 20px;
+      }
+      .el-col {
+        border-radius: 4px;
+      }
+      .bg-purple-dark {
+        background: #99a9bf;
+      }
+      .bg-purple {
+        background: #d3dce6;
+      }
+      .bg-purple-light {
+        background: #e5e9f2;
+      }
+      .grid-content {
+        border-radius: 4px;
+        min-height: 36px;
+      }
+      .row-bg {
+        padding: 10px 0;
+        background-color: #f9fafc;
+      }
+
+      /* 轮播 */
+      .el-carousel__item h3 {
+        color: #475669;
+        font-size: 14px;
+        opacity: 0.75;
+        line-height: 150px;
+        margin: 0;
+      }
+
+      .el-carousel__item:nth-child(2n) {
+        background-color: #99a9bf;
+      }
+
+      .el-carousel__item:nth-child(2n + 1) {
+        background-color: #d3dce6;
+      }
+    </style>
+  </body>
+</html>

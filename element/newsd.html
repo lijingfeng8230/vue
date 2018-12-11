@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>首页</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/media.css" />
+    <link rel="stylesheet" href="css/swiper.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <!-- 引入样式 -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"
+    />
+  </head>
+
+  <body>
+    <div id="app" class="wrap">
+      <el-container>
+        <!-- 头部 -->
+        <el-header class="header">
+             <div class="content clearfix">
+                <i class="fa  fa-angle-left icon fr back-btn"></i>
+                新闻
+                <i class="fa fa-bars icon fr nav-btn"></i>
+             </div>
+        </el-header>
+
+        <!-- 主内容 -->
+        <el-main class="main">
+          <!-- 轮播 -->
+          <div class="banner-1 swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="images/banner7.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="images/banner8.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="images/banner10.jpg" alt="" />
+              </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next" style="display:none"></div>
+            <div class="swiper-button-prev" style="display:none"></div>
+          </div>
+
+
+     
+
+
+          <section class="news-detail">
+              <div class="content clearfix">
+                   <h2>新闻标题</h2>
+                   <div class="news-time">2018-12-11</div>
+                   <div class="news-con">
+                      《闪电侠》（The
+                      Flash）是由美国DC娱乐和华纳兄弟电视公司合作出品的科幻电视连续剧，格里格·伯兰蒂、安德鲁·克雷斯伯格和戈夫·约翰斯担任制作，由戴维·纳特执导首集，格...
+                   </div>
+              </div>
+          </section>
+
+        
+
+
+        </el-main>
+
+        <!-- 脚部 -->
+            <el-footer> 
+                 <ul>
+                     <li class="active">
+                        <div>
+                          <i class="fa fa-home fa-3x icon"></i>
+                        </div>
+                        <div>首页</div>
+                     </li>
+                    <li>
+                        <div>
+                          <i class="fa fa-mobile fa-3x icon"></i>
+                        </div>
+                        <div>产品</div>
+                    </li>
+                     <li>
+                      <div>
+                        <i class="fa fa-newspaper-o fa-3x icon"></i>
+                      </div>
+                      <div>新闻</div>
+                   </li>
+                   <li>
+                    <div>
+                      <i class="fa fa-user fa-3x icon"></i>
+                    </div>
+                    <div>我的</div>
+                 </li>
+                 </ul>
+            </el-footer>
+      </el-container>
+    </div>
+
+    <!-- 引入组件库 -->
+
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <!-- import JavaScript -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: function() {
+          return { visible: false };
+        }
+      });
+    </script>
+    <script src="js/swiper.js"></script>
+    <script>
+      var swiper = new Swiper(".swiper-container", {
+        spaceBetween: 0,
+        centeredSlides: true,
+        loop: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true
+        }
+      });
+    </script>
+
+    <style>
+      .el-row {
+        margin-bottom: 20px;
+      }
+      .el-col {
+        border-radius: 4px;
+      }
+      .bg-purple-dark {
+        background: #99a9bf;
+      }
+      .bg-purple {
+        background: #d3dce6;
+      }
+      .bg-purple-light {
+        background: #e5e9f2;
+      }
+      .grid-content {
+        border-radius: 4px;
+        min-height: 36px;
+      }
+      .row-bg {
+        padding: 10px 0;
+        background-color: #f9fafc;
+      }
+
+      /* 轮播 */
+      .el-carousel__item h3 {
+        color: #475669;
+        font-size: 14px;
+        opacity: 0.75;
+        line-height: 150px;
+        margin: 0;
+      }
+
+      .el-carousel__item:nth-child(2n) {
+        background-color: #99a9bf;
+      }
+
+      .el-carousel__item:nth-child(2n + 1) {
+        background-color: #d3dce6;
+      }
+    </style>
+  </body>
+</html>
